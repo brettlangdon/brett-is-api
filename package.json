@@ -1,0 +1,19 @@
+{
+  "name": "brett-is-api",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git://github.com/brettlangdon/brett-is-api.git",
+  "author": "Brett Langdon <brett@blangdon.com> (www.brett.is)",
+  "license": "MIT",
+  "dependencies": {
+    "restify": "~1.4.4"
+  },
+  "bin": {
+      "brett-is-api": "bin/brett-is-api"
+  },
+  "private": true
+}
