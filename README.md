@@ -41,11 +41,29 @@ The units API is used to convert between various measurements.
 To get a list of the currently available conversions:
 ```bash
 $ curl http://api.brett.is/units
-{"fahrenheit":["celsius"],"celsius":["fahrenheit"],"gallon":["cup","liter","pint","milliliter"],"cup":["gallon","liter","pint","milliliter"],"liter":["gallon","cup","pint","milliliter"],"milliliter":["gallon","cup","pint","liter"],"pint":["gallon","cup","liter","milliliter"],"pound":["ounce","gram"],"ounce":["pound","gram"],"gram":["ounce","pound"]}V
+{"time":["second","sec","s","minute","min","m","hour","hr","h","day","week"],"distance":["meter","m","feet","ft","inch","in","yard","yd","mile","mi"],"mass":["ton","t","gram","gm","pound","lb","ounce","oz","stone","st"],"volume":["liter","L","gallon","gal","pint","quart","qt","tablespoon","tbsp","teaspoon","tsp","cup","ounce","oz","gill","gi","barrel","bbl"],"storage":["bit","b","byte","B","kilobit","kb","kilobyte","KB","megabit","mb","megabyte","MB","gigabit","gb","gigabyte","GB","terabit","tb","terabyte","TB","petabit","pb","petabyte","PB"]}
+```
+
+To get information about a specific unit:
+```bash
+$ curl http://api.brett.is/units/type/megabytes
+[{"type":"storage","unit":"megabyte","modifier":1}]
+
+$ curl http://api.brett.is/units/type/ounces
+[{"type":"mass","unit":"ounce","modifier":1},{"type":"volume","unit":"ounce","modifier":1}]
+
+$ curl http://api.brett.is/units/type/milliliters
+[{"type":"distance","unit":"meter","modifier":0.001}]
 ```
 
 To convert between supported measurements:
 ```bash
 $ curl http://api.brett.is/units/5/gallon/to/pint
 {"convert":5,"from":"gallon","to":"pint","result":40}
+
+$ curl http://api.brett.is/units/five/gallon/to/pint
+{"convert":5,"from":"gallon","to":"pint","result":40}
+
+$ curl http://api.brett.is/units/forty%20two/bits/to/bytes
+{"convert":forty two,"from":"bits","to":"bytes","result":5.25}
 ```
