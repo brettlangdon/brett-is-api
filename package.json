@@ -1,6 +1,6 @@
 {
   "name": "brett-is-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -10,10 +10,11 @@
   "author": "Brett Langdon <brett@blangdon.com> (www.brett.is)",
   "license": "MIT",
   "dependencies": {
-    "restify": "~1.4.4"
+    "restify": "~1.4.4",
+    "node-units": "~0.1.0"
   },
   "bin": {
-      "brett-is-api": "bin/brett-is-api"
+    "brett-is-api": "bin/brett-is-api"
   },
   "private": true
 }
